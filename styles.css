@@ -61,7 +61,18 @@ button {
 }
 
 #gameCanvas.modern {
-    background-color: #2b552b;
+    background-color: #8FBC8F;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.controls div {
+    display: flex;
 }
 
 body.modern .score-board,
