@@ -1,9 +1,9 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-const scale = 20;
-const rows = canvas.height / scale;
-const columns = canvas.width / scale;
+let scale = 20;
+let rows;
+let columns;
 
 let snake;
 let fruit;
@@ -18,6 +18,14 @@ let gameEnded = false;
 let intervalId;
 let gameSpeed;
 let gameStyle;
+
+function resizeCanvas() {
+    canvas.width = Math.min(window.innerWidth, window.innerHeight) - 40;
+    canvas.height = canvas.width;
+    scale = Math.floor(canvas.width / 20);
+    rows = canvas.height / scale;
+    columns = canvas.width / scale;
+}
 
 function startGame(difficulty) {
     switch (difficulty) {
@@ -61,6 +69,7 @@ function backToStyle() {
 }
 
 function setup() {
+    resizeCanvas();
     snake = new Snake();
     fruit = new Fruit();
     fruit.pickLocation();
@@ -222,3 +231,5 @@ function updateLastScores(score, name) {
         document.querySelector(`.score${i + 1}`).innerText = lastScores[i].score;
     }
 }
+
+window.addEventListener('resize', resizeCanvas);
