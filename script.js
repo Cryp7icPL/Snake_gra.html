@@ -98,6 +98,10 @@ document.getElementById('nameForm').addEventListener('submit', e => {
     }
 });
 
+function moveSnake(direction) {
+    snake.changeDirection(direction);
+}
+
 function Snake() {
     this.x = 0;
     this.y = 0;
