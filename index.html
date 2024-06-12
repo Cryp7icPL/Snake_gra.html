@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Snake</h1>
+    <div id="menu" class="menu">
+        <h2>Wybierz poziom trudności:</h2>
+        <button onclick="startGame('easy')">Łatwy</button>
+        <button onclick="startGame('normal')">Normalny</button>
+        <button onclick="startGame('hard')">Trudny</button>
+    </div>
+    <div id="styleMenu" class="menu" style="display: none;">
+        <h2>Wybierz styl gry:</h2>
+        <button onclick="chooseStyle('retro')">Retro</button>
+        <button onclick="chooseStyle('modern')">Kolorowe</button>
+        <button onclick="backToDifficulty()">Powrót</button>
+    </div>
+    <div id="game" style="display: none;">
+        <div class="score-board">
+            <h2>Score: <span class="score">0</span></h2>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="score-table">
+            <h2>Last 5 Scores</h2>
+            <form id="nameForm">
+                <input type="text" id="playerName" placeholder="Your Name">
+                <button type="submit">Submit</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="name1">---</td>
+                        <td class="score1">0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="name2">---</td>
+                        <td class="score2">0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="name3">---</td>
+                        <td class="score3">0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="name4">---</td>
+                        <td class="score4">0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="name5">---</td>
+                        <td class="score5">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="backToStyle()">Powrót</button>
+            <button onclick="backToDifficulty()">Powrót do poziomu trudności</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
