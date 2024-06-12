@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
+    <title>Fnek Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Snake</h1>
+    <h1>Fnek</h1>
     <div id="menu" class="menu">
         <h2>Wybierz poziom trudności:</h2>
         <button onclick="startGame('easy')">Łatwy</button>
@@ -25,6 +25,14 @@
             <h2>Score: <span class="score">0</span></h2>
         </div>
         <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls">
+            <button onclick="moveSnake('Up')">↑</button>
+            <div>
+                <button onclick="moveSnake('Left')">←</button>
+                <button onclick="moveSnake('Down')">↓</button>
+                <button onclick="moveSnake('Right')">→</button>
+            </div>
+        </div>
         <div class="score-table">
             <h2>Last 5 Scores</h2>
             <form id="nameForm">
